@@ -87,14 +87,46 @@ body {
 }
 
 /* 名字打字动画 */
+/* 修改前的代码（删除或注释掉这些）：
 @keyframes type-name {
     from { width: 0; }
-    to { width: 360px; } /* 大致等于"Quella"的宽度 */
+    to { width: 360px; }
 }
 
-/* 标题打字动画 */
 @keyframes type-title {
     from { width: 0; }
-    to { width: 300px; } /* 大致等于"Portfolio"的宽度 */
+    to { width: 300px; }
 }
+*/
+
+/* 替换为以下新样式 */
+.typing-text {
+    font-weight: 300;
+    overflow: hidden;
+    border-right: 2px solid #333;
+    white-space: nowrap;
+    margin: 0 auto;
+    display: inline-block; /* 重要：改为行内块元素 */
+    animation: blink-caret 0.75s step-end infinite;
+}
+
+/* 移除原来的宽度动画，现在由JavaScript控制宽度 */
+#typing-name {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+    /* 移除原来的animation属性 */
+}
+
+#typing-title {
+    font-size: 1.8rem;
+    color: #666;
+    /* 移除原来的animation属性 */
+}
+
+/* 保留光标闪烁动画 */
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #333; }
+}
+
 
